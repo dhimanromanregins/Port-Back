@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Contact, Mentorship,Project_Planner,Projects,DisplayImage, Testmonials
+from .models import Contact, Mentorship,category,Project_Planner,Projects,DisplayImage, Testmonials
 
 class ContactSerializer(serializers.ModelSerializer):
     class Meta:
@@ -33,4 +33,10 @@ class DisplayImageSerializer(serializers.ModelSerializer):
 class TestmonialsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Testmonials
+        fields = '__all__'
+
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = category
         fields = '__all__'

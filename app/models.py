@@ -25,11 +25,15 @@ class Project_Planner(models.Model):
     budget = models.CharField(max_length=250)
     description = models.TextField(max_length=1000)
 
+class category(models.Model):
+    category = models.CharField(max_length=250)
+    category_description = models.TextField(max_length=1000)
+    image = models.ImageField(upload_to='category/')
 
 class Projects(models.Model):
     project_name = models.CharField(max_length=250)
     project_description = models.TextField(max_length=1000)
-    project_category = models.CharField(max_length=250)
+    project_category = models.ForeignKey(category, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='projects/')
 
 class DisplayImage(models.Model):

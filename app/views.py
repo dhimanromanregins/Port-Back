@@ -1,7 +1,7 @@
 # yourappname/views.py
 from rest_framework import viewsets
-from .models import Contact, Mentorship,Project_Planner,Projects,DisplayImage, Testmonials
-from .serializers import ContactSerializer, MentorSerializer,ProjectSerializer,ProjectsSerializer, DisplayImageSerializer, TestmonialsSerializer
+from .models import Contact, Mentorship,Project_Planner,category,Projects,DisplayImage, Testmonials
+from .serializers import ContactSerializer,CategorySerializer, MentorSerializer,ProjectSerializer,ProjectsSerializer, DisplayImageSerializer, TestmonialsSerializer
 
 class ContactViewSet(viewsets.ModelViewSet):
     authentication_classes = []
@@ -33,4 +33,8 @@ class DisplayImageViewSet(viewsets.ModelViewSet):
 class TestmonialsViewSet(viewsets.ModelViewSet):
     queryset = Testmonials.objects.all()
     serializer_class = TestmonialsSerializer
+
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = category.objects.all()
+    serializer_class = CategorySerializer
 
