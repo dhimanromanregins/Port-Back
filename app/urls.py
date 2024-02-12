@@ -13,3 +13,6 @@ router.register(r'category', CategoryViewSet, basename='category')
 urlpatterns = [
     path('', include(router.urls)),
 ]
+
+
+# This is a test for auto deployment
