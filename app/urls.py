@@ -2,7 +2,7 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import ContactViewSet, CategoryViewSet,MentorViewSet,  ProjectViewSet, ProjectsViewSet,DisplayImageViewSet, TestmonialsViewSet
 
-router = DefaultRouter()
+router = DefaultRouter() 
 router.register(r'contacts', ContactViewSet, basename='contact')
 router.register(r'test', ContactViewSet, basename='test')
 router.register(r'mentor', MentorViewSet, basename='mentor')
