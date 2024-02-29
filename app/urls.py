@@ -4,6 +4,7 @@ from .views import ContactViewSet, CategoryViewSet,MentorViewSet,  ProjectViewSe
 
 router = DefaultRouter()
 router.register(r'contacts', ContactViewSet, basename='contact')
+router.register(r'test', ContactViewSet, basename='test')
 router.register(r'mentor', MentorViewSet, basename='mentor')
 router.register(r'projects', ProjectViewSet, basename='project')
 router.register(r'project-display', ProjectsViewSet, basename='Project-display')
