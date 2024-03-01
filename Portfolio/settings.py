@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-9vj_zeuspc(tf*mx@)kd2=u((fledjp9df(ae2wi&5u1uwud9s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['13.235.82.122', 'sahildhiman.online']
+ALLOWED_HOSTS = ['143.110.250.229', 'sahildhiman.online']
 
 CORS_ALLOWED_ORIGINS = [
     'https://sahildhiman.online',
