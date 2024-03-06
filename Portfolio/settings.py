@@ -34,6 +34,8 @@ CORS_ALLOWED_ORIGINS = [
 # Application definition
 
 INSTALLED_APPS = [
+    "daphne",
+    "channels",
     'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -45,7 +47,7 @@ INSTALLED_APPS = [
     'app',
     'corsheaders',
     'chat',
-    'storages',
+    'users_chat'
 ]
 
 MIDDLEWARE = [
@@ -77,7 +79,21 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Portfolio.wsgi.application'
+# WSGI_APPLICATION = 'Portfolio.wsgi.application'
+ASGI_APPLICATION = 'Portfolio.asgi.application'
+
+
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('localhost', 6379)],
+        },
+    },
+}
+
+AUTH_USER_MODEL = 'users_chat.CustomUser'
 
 
 # Database
