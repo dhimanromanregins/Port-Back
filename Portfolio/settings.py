@@ -30,6 +30,7 @@ ALLOWED_HOSTS = ['143.110.250.229', 'sahildhiman.online', "127.0.0.1"]
 
 CORS_ALLOWED_ORIGINS = [
     'https://sahildhiman.online',
+    'http://localhost:3000'
 ]
 # Application definition
 

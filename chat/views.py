@@ -14,10 +14,10 @@ from .serializers import ChatDataSerializer
 def process_data(request):
     if request.method == 'POST':
         data = request.data
-        message = data.get('user_message')
+        message = data.get('user')
         response = get_response(message)
         response_message = {"answer": response}
-        return Response({'Bot-message': response_message})
+        return Response({'assistant': response_message})
     else:
         return Response({'error': 'Only POST requests are allowed.'}, status=405)
 

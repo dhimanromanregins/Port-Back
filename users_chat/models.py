@@ -30,8 +30,8 @@ class Rooms(models.Model):
         return self.name
 
 class Message(models.Model):
-    sender_username = models.CharField(max_length=255)
-    reciever_username = models.CharField(max_length=25)
+    sender_username = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="sender", to_field='username')
+    receiver_username = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="receiver", to_field='username', null=True, blank=True)
     content = models.TextField()
     room = models.ForeignKey(Rooms, on_delete=models.CASCADE)
     created_on = models.DateTimeField(auto_now_add=True)
